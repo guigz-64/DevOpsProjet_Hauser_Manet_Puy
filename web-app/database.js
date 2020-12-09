@@ -22,7 +22,7 @@ exports.initializeMongo = function() {
     });
 };
 
-function insert(req,res){
+module.exports.insert = (req,res) => {
     //nous créons une instance de l'objet client qui a été créer dans le fichier client.model
     var client = new Client();
     client.fullName = req.body.fullName;
@@ -40,6 +40,16 @@ function insert(req,res){
 
     });
       
+};
+
+module.exports.update = (req, res) => {
+    Client.findOneAndUpdate({_id:req.body._id},req.body,{new:true},(err,doc)=>{
+        if(!err) {
+            res.redirect('client/list');
+        } else {
+            console.log('The update does not work'+err);
+        };
+    });
 };
 
 
