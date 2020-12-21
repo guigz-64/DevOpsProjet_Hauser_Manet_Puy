@@ -46,7 +46,7 @@ function update(req,res){
         else{
             console.log('The update does not work'+err);
         }
-    });
+    }).lean();
 }
 
 router.get('/list',(req,res)=>{
@@ -64,7 +64,7 @@ router.get('/list',(req,res)=>{
         else{
             console.log('No such a list'+err);
         }
-    });
+    }).lean();
    
 });
 
@@ -79,7 +79,7 @@ router.get('/:id',(req,res)=>{
 
         }
        
-    }) ;
+    }).lean() ;
 
 });
 
@@ -91,7 +91,7 @@ router.get('/delete/:id',(req,res)=>{
         else{
             console.log('Error in employee delete:'+err);
         }
-    });
+    }).lean();
 
 
 });
