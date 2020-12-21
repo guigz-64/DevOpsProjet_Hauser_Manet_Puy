@@ -5,7 +5,7 @@ const bodyParser = require('body-parser'); //middleware permet d’accéder à l
 const methodOverride = require('method-override'); //pour simuluer DELETE
 
 const app = express() //init app
-const port = process.env.PORT || 8080 //set port
+const port = process.env.PORT || 3000 //set port
 
 //client
 const client = require('./dbClient')
