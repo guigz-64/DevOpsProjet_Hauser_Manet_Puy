@@ -1,13 +1,14 @@
 const assert = require('assert');
-var expect = require('chai').expect;
- 
-const mongoose = require("mongoose");
+const {expect} = require('chai');
 require("../src/models/clientModel");
-const Client = mongoose.model("Client");
-
+ 
  
 describe('User', () => {
-
+  before(() => {
+    mongoose = require("mongoose");
+//require("../src/models/clientModel");
+  Client = mongoose.model("Client");  
+})
 
     describe('Create', () => {
   
@@ -24,17 +25,17 @@ describe('User', () => {
         })
       })
   
-//       it('passing wrong user parameters', (done) => {
-//         const user = {
-//           fullname: '',
-//           email : '',
-//           phone : ''
-//         }
-//         var client = new Client(user, (err, result) => {
-//           expect(err).to.not.be.equal(null)
-//           expect(result).to.be.equal(null)
-//           done()
-//         })
-//       })
+      it('passing wrong user parameters', (done) => {
+        const user = {
+          fullname: 'Guillaume',
+          email : 'guillaume',
+          phone : '0620'
+        }
+        var client = new Client(user, (err, result) => {
+          expect(err).to.not.be.equal(null)
+          expect(result).to.be.equal(null)
+          done()
+        })
+      })
      } )}
 )
